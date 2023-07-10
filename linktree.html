@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>linktree</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class=" bkgrd1">
+    <div class="circular--landscape" id="lottery1" > <img src="miku.jpg" /></div>
+    <span style="font-family:fantasy;font-size:40px; ">	Hatsune Miku</span>
+    <span style="font-size:20px; ">	utahime</span>
+    <table>
+        <tbody>
+        <tr>
+            <td><a href="https://www.facebook.com/HatsuneMikuOfficialPage" target="_blank"><button><i class="icon icon-fb"></i></button></a></td>
+            <td>&emsp;</td>
+            <td><a href="https://twitter.com/cfm_miku_en?s=20" target="_blank"><button><i class="icon icon-twr"></i></button></a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="result" class=" button bg-green-500"></div>
+</div>
+<script>
+    $.getJSON('links.json', res=>{
+       // $("#result").append("<span>using getJSON</span>")
+        res.forEach(item => {
+            $("#result").append(`<a href="${item.link}" class="text-white-400" >${item.text}</a><br>`)
+        })
+    })
+</script>
+</body>
+</html>
